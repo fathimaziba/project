@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Page - Finance Tracker</title>
+
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #2a3d66;
+      color: #fff;
+      padding: 20px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Transaction Section */
+    .transaction-section {
+      margin-top: 40px;
+    }
+
+    .transaction-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-add {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .btn-add:hover {
+      background-color: #45a049;
+    }
+
+    .transaction-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .transaction-table th, .transaction-table td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    .transaction-table th {
+      background-color: #2a3d66;
+      color: white;
+    }
+
+    .transaction-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .status {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .status.expense {
+      background-color: #ffcccc;
+      color: #e74c3c;
+    }
+
+    .status.income {
+      background-color: #d4edda;
+      color: #28a745;
+    }
+
+    .btn-view {
+      background-color: #007bff;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .btn-view:hover {
+      background-color: #0056b3;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #2a3d66;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Finance Tracker</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Transactions</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="transaction-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Transactions</h2>
+        <a href="{% url 'new_transaction' %}" class="btn-add">+ Add New Transaction</a>
+      </div>
+
+      <table class="transaction-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2024-12-01</td>
+            <td>Groceries</td>
+            <td>Food</td>
+            <td>-$50.00</td>
+            <td><span class="status expense">Expense</span></td>
+            <td><a href="view-transaction.html" class="btn-view">View</a></td>
+          </tr>
+          <tr>
+            <td>2024-12-03</td>
+            <td>Salary</td>
+            <td>Income</td>
+            <td>$1200.00</td>
+            <td><span class="status income">Income</span></td>
+            <td><a href="view-transaction.html" class="btn-view">View</a></td>
+          </tr>
+          <tr>
+            <td>2024-12-05</td>
+            <td>Utilities Bill</td>
+            <td>Bill</td>
+            <td>-$100.00</td>
+            <td><span class="status expense">Expense</span></td>
+            <td><a href="view-transaction.html" class="btn-view">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Finance Tracker App</p>
+    </div>
+  </footer>
+
+</body>
+</html>

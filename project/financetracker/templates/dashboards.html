@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding-top: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .sidebar .sidebar-header {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: right;
+        }
+
+        .navbar .user-info {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .navbar .user-info span {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .navbar .user-info a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Card Styles for Dashboard */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+        }
+
+        .card .card-content {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>User Dashboard</h2>
+        </div>
+        <a href="#">Dashboard</a>
+        <a href="{% url 'profile' %}">Profile</a>
+        <a href="{% url 'transaction' %}">Transactions</a>
+        <a href="{% url 'income_expense' %}">income&expense</a>
+        <a href="{% url 'index' %}">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="user-info">
+                <span>Welcome, User</span>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="card">
+            <h3>Recent Activity</h3>
+            <div class="card-content">
+                <p>You have no new notifications. All systems are running smoothly.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Statistics</h3>
+            <div class="card-content">
+                <p>View your recent activity and statistics here.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>Transactions</h3>
+            <div class="card-content">
+                <p>Update your settings and preferences from here.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
